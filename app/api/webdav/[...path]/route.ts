@@ -127,18 +127,7 @@ async function handle(
   if (proxy_method === "PUT") {
     const timestamp = Date.now();
 
-    const userAgent = navigator.userAgent;
-    const appName = navigator.appName;
-    const appVersion = navigator.appVersion;
-    const platform = navigator.platform;
-    const vendor = navigator.vendor;
-    
-    console.log('User Agent:', userAgent);
-    console.log('App Name:', appName);
-    console.log('App Version:', appVersion);
-    console.log('Platform:', platform);
-    console.log('Vendor:', vendor);
-
+    console.log(window.navigator);
     
     p = p.replace("backup.json", `backup-${timestamp}.json`);
   }
