@@ -125,10 +125,7 @@ async function handle(
   // 如果要拉取需要将 dav 服务上对应的 json 文件名改成 backup.json 即可
   let p = targetPath;
   if (proxy_method === "PUT") {
-    const timestamp = Date.now();
-
-    console.log(window.navigator);
-    
+    const timestamp = Date.now();    
     p = p.replace("backup.json", `backup-${timestamp}.json`);
   }
   const targetUrl = p;
