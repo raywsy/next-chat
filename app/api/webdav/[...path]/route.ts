@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { STORAGE_KEY, internalAllowedWebDavEndpoints } from "../../../constant";
 import { getServerSideConfig } from "@/app/config/server";
+import * as os from 'os';
 
 const config = getServerSideConfig();
 
@@ -126,6 +127,10 @@ async function handle(
   let p = targetPath;
   if (proxy_method === "PUT") {
     const timestamp = Date.now();
+    const computerName = os.hostname();
+    console.log('当前电脑名:', computerName);
+    console.log(os);
+    
     p = p.replace("backup.json", `backup-${timestamp}.json`);
   }
   const targetUrl = p;
